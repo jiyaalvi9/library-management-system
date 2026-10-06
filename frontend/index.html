@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><h1>📚 Library Management System</h1>
+<nav><button data-tab="books" class="active">Books</button><button data-tab="members">Members</button><button data-tab="loans">Loans</button></nav></header>
+<main>
+<p id="msg"></p>
+
+<section id="books">
+  <form id="bookForm"><input name="title" placeholder="Title" required><input name="author" placeholder="Author" required>
+  <input name="isbn" placeholder="ISBN"><input name="copies" type="number" min="1" value="1"><button>Add book</button></form>
+  <table><thead><tr><th>Title</th><th>Author</th><th>ISBN</th><th>Available</th><th></th></tr></thead><tbody id="bookRows"></tbody></table>
+</section>
+
+<section id="members" hidden>
+  <form id="memberForm"><input name="name" placeholder="Name" required><input name="email" type="email" placeholder="Email"><button>Add member</button></form>
+  <table><thead><tr><th>Name</th><th>Email</th><th></th></tr></thead><tbody id="memberRows"></tbody></table>
+</section>
+
+<section id="loans" hidden>
+  <form id="loanForm"><select name="book_id" id="bookSel" required></select><select name="member_id" id="memberSel" required></select><button>Issue book (14 days)</button></form>
+  <table><thead><tr><th>Book</th><th>Member</th><th>Issued</th><th>Due</th><th>Status</th><th></th></tr></thead><tbody id="loanRows"></tbody></table>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
